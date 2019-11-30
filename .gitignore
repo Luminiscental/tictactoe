@@ -2,3 +2,8 @@
 ### Rust ###
 tictactoe-rs/target
 **/*.rs.bk
+
+### Haskell ###
+tictactoe-hs/.stack-work/
+tictactoe-hs/tictactoe-hs.cabal
+tictactoe-hs/*~

@@ -1,0 +1,21 @@
+name:                tictactoe-hs
+version:             0.1.0.0
+github:              "githubuser/tictactoe-hs"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+description:         Please see the README on GitHub at <https://github.com/Luminiscental/tictactoe#readme>
+dependencies:
+- base >= 4.7 && < 5
+library:
+  source-dirs: src
+executables:
+  tictactoe-hs-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tictactoe-hs
