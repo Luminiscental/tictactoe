@@ -136,9 +136,9 @@ impl Game {
     }
 
     fn try_place(&mut self, x: usize, y: usize, player: Player) -> TryPlaceResult {
-        if x > BOARD_SIZE {
+        if x >= BOARD_SIZE {
             TryPlaceResult::ColumnOutOfBounds
-        } else if y > BOARD_SIZE {
+        } else if y >= BOARD_SIZE {
             TryPlaceResult::RowOutOfBounds
         } else if let TileState(Some(_)) = self.get_tile(x, y) {
             TryPlaceResult::Occupied
