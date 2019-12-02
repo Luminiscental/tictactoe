@@ -79,11 +79,6 @@ class Board:
 
             try:
                 row = int(coords[0])
-            except ValueError:
-                print("Couldn't parse row/column, expected an integer")
-                continue
-
-            try:
                 column = int(coords[1])
             except ValueError:
                 print("Couldn't parse row/column, expected an integer")

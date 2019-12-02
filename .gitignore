@@ -7,3 +7,11 @@ tictactoe-rs/target
 tictactoe-hs/.stack-work/
 tictactoe-hs/tictactoe-hs.cabal
 tictactoe-hs/*~
+
+### Python ###
+**/__pycache__
+
+### C++ ###
+tictactoe-cpp/build
+tictactoe-cpp/tictactoe-cpp
+**/compile_commands.json
