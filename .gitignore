@@ -15,3 +15,13 @@ tictactoe-hs/*~
 tictactoe-cpp/build
 tictactoe-cpp/tictactoe-cpp
 **/compile_commands.json
+
+### Java ###
+tictactoe-java/bin
+tictactoe-java/build
+tictactoe-java/.settings
+tictactoe-java/.project
+tictactoe-java/gradle
+tictactoe-java/.gradle
+tictactoe-java/.classpath
+**/*.jar
