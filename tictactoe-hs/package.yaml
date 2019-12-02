@@ -1,16 +1,11 @@
 library:
   source-dirs: src
-maintainer: example@example.com
 dependencies:
 - containers
 - error-util
 - split
 - base >= 4.7 && < 5
 name: tictactoe-hs
-version: 0.1.0.0
-author: Author name here
-github: githubuser/tictactoe-hs
-license: BSD3
 executables:
   tictactoe-hs-exe:
     source-dirs: app
@@ -21,4 +16,3 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - tictactoe-hs
-description: Please see the README on GitHub at <https://github.com/Luminiscental/tictactoe#readme>
