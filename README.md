@@ -11,4 +11,4 @@ thought put into making the implementations short / elegant currently.
 * `tictactoe-cpp` A C++ implementation [316 LOC]
 * `tictactoe-java` A Java implementation [206 LOC]
 
-LOC measured with [cloc](http://cloc.sourceforge.net/).
+LOC measured with [cloc](https://github.com/AlDanial/cloc/).
