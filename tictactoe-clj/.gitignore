@@ -17,6 +17,7 @@ profiles.clj
 .lein-repl-history
 .lein-plugins/
 .lein-failures
+.lsp
 .nrepl-port
 .cpcache/
 
