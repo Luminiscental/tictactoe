@@ -1,12 +1,25 @@
-/target
-/classes
-/checkouts
-profiles.clj
+# Created by https://www.gitignore.io/api/clojure,leiningen
+# Edit at https://www.gitignore.io/?templates=clojure,leiningen
+
+### Clojure ###
 pom.xml
 pom.xml.asc
 *.jar
 *.class
-/.lein-*
-/.nrepl-port
+/lib/
+/classes/
+/target/
+/checkouts/
+profiles.clj
 .hgignore
 .hg/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
+
+### Leiningen ###
+
+# End of https://www.gitignore.io/api/clojure,leiningen
