@@ -7,6 +7,16 @@
   [n x]
   (into [] (repeat n x)))
 
+(defn not-all-ints
+  "Check if not every element of xs is an integer string."
+  [xs]
+  (not-every? #(re-find #"^-?\d+$" %) xs))
+
+(defn not-all-positive
+  "Check if not every element of xs is a positive integer string."
+  [xs]
+  (not-every? #(re-find #"^[1-9]+$" %) xs))
+
 (def board-size
   "The side-length of a board."
   3)
@@ -53,17 +63,45 @@
   [owner board x y]
   (assoc board y (assoc (board y) x owner)))
 
+(defn try-set-owner
+  "Set the owner of a cell on a board and return true, or return false if it is invalid."
+  [owner board x y]
+  (cond
+    (>= x board-size)                   (do
+                                          (println "Column must be between 1 and" board-size)
+                                          false)
+    (>= y board-size)                   (do
+                                          (println "Row must be between 1 and" board-size)
+                                          false)
+    (not= :empty (get-owner board x y)) (do
+                                          (println "Cannot place in a cell which is already occupied")
+                                          false)
+    :else                               (do
+                                          (set-owner owner board x y)
+                                          true)))
+
 (defn get-player-input
-  "Ask for a player's chosen position to play at."
+  "Ask for a player's chosen position to play at, returning a list (row column)."
   [player]
   (do
     (print (str "Where does player " (owner-string player) " want to play? Give a row,column pair: "))
     (flush)
-    (read-line)))
+    (let [elements (map string/trim (string/split (read-line) #","))]
+      (cond
+        (not= 2 (count elements))   (do
+                                      (println "Expected two numbers separated by a comma")
+                                      (get-player-input player))
+        (not-all-ints elements)     (do
+                                      (println "Couldn't parse row/column, expected an integer")
+                                      (get-player-input player))
+        (not-all-positive elements) (do
+                                      (println "Couldn't parse row/column, index must start from 1")
+                                      (get-player-input player))
+        :else (apply list (map (comp dec read-string) elements))))))
 
 (defn -main
   "Run the game to completion."
   [& args]
   (let [input (get-player-input :x)
         board (set-owner :o (set-owner :x (empty-board) 1 1) 0 2)]
-    (println (str "input:\n" input "\nboard:\n" (display-board board)))))
+    (println (string/join "\n" (list "input:" input "board:" (display-board board))))))
