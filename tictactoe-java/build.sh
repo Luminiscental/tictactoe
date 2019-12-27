@@ -1,4 +1,4 @@
 #!/bin/sh
 
 ./gradlew build
-cp build/libs/tictactoe-java.jar .
+cp build/libs/tictactoe.jar .

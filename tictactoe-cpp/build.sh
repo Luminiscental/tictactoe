@@ -5,7 +5,7 @@ pushd build
 
 cmake ..
 make
-mv tictactoe-cpp ..
+mv tictactoe ..
 cp compile_commands.json ..
 
 popd
