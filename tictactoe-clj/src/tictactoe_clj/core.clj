@@ -88,7 +88,7 @@
   "Ask for a player's chosen position to play at, returning a list (row column)."
   [player]
   (do
-    (print (str "Where does player " (owner-string player) " want to play? Give a row,column pair: "))
+    (print "Where does player" (owner-string player) "want to play? Give a row,column pair: ")
     (flush)
     (let [elements (map string/trim (string/split (read-line) #","))]
       (cond
@@ -175,7 +175,7 @@
 
 (defn -main
   "Run the game to completion."
-  [& args]
+  []
   (do
     (println "Welcome to tic-tac-toe!")
     (case (run-game empty-board :x)
