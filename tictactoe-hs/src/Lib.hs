@@ -168,5 +168,6 @@ stepGame game = do
 runGame :: Game -> IO ()
 runGame game = do
     putStrLn "Welcome to tic-tac-toe!"
+    putStrLn $ "\n" ++ show (board game)
     go game
     where go = (mapM_ go =<<) . stepGame

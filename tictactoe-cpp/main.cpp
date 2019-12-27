@@ -334,10 +334,11 @@ class GameState
         _toMove = firstMove;
         std::optional<EndState> endState;
 
+        std::cout << std::endl << displayBoard();
         do
         {
             makeMove();
-            std::cout << std::endl << displayBoard() << std::endl;
+            std::cout << std::endl << displayBoard();
             toggleMove();
         } while (!(endState = checkForEnd()).has_value());
 

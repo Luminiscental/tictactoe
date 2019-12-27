@@ -247,6 +247,7 @@ impl Game {
 
     fn run(&mut self) -> io::Result<()> {
         println!("Welcome to tic-tac-toe!");
+        println!("\n{}", self);
         self.turn = self.first_turn;
 
         while self.state == GameState::Running {
@@ -267,8 +268,7 @@ impl Game {
                 }
             }
 
-            println!("");
-            println!("{}", self);
+            println!("\n{}", self);
             self.check_win_condition();
             self.turn = self.turn.toggle();
         }

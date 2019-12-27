@@ -108,6 +108,8 @@ class TicTacToe {
 
     private void run() {
         System.out.println("Welcome to tic-tac-toe!");
+        System.out.println();
+        System.out.println(board);
         while (stepGame()) {
             togglePlayer();
         }
